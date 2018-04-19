@@ -1,7 +1,8 @@
 function gradeResult() {
 	var myEnglishResult = parseInt(document.getElementById("value-english").value);
 	var myIrishResult = parseInt(document.getElementById("value-irish").value);
-	var englishGrade, irishGrade;
+	var myMathsResult = parseInt(document.getElementById("value-maths").value);
+	var englishGrade, irishGrade, mathsGrade;
 	
 	if (!myEnglishResult){
 		alert("Please enter a result");
@@ -64,5 +65,37 @@ function gradeResult() {
 		var message = 'Your Irish result of ' + myIrishResult + ' gets you a grade ' + Irishgrade;
 		console.log(message);
 		document.getElementById("Irishresultsentence").innerHTML = message;
+	}
+	
+	if (!myMathsResult){
+		alert("Please enter a result");
+	}
+	else if (myMathsResult <0 || myMathsResult >100){
+		alert("Please eneter a number between 0 and 100");
+	}
+	
+	else{
+		if (myMathsResult > 90) {
+			Mathsgrade= 'A';
+		}else if (myMathsResult > 80) {
+			Mathsgrade = 'B';
+		}else if (myMathsResult > 70) {
+			Mathsgrade = 'B-';
+		}else if (myMathsResult > 60) {
+			Mathsgrade = 'C';
+		}else if (myMathsResult > 50) {
+			Mathsgrade = 'C-';
+		}else if (myMathsResult > 40) {
+			Mathsgrade = 'D';
+		}else {
+			Mathsgrade = 'F';
+		}
+		
+		
+		
+		
+		var message = 'Your Maths result of ' + myMathsResult + ' gets you a grade ' + Mathsgrade;
+		console.log(message);
+		document.getElementById("Mathsresultsentence").innerHTML = message;
 	}
 }
